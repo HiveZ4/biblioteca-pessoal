@@ -21,7 +21,7 @@ const testConnection = async () => {
 testConnection();
 
 //Cross Origin Resource Sharing
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 //built-in middleware to handle url encoded data
 //data which user enters in a form
