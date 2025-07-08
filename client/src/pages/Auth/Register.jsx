@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import './auth.css';
 
-const URL = 'http://localhost:8082';
+const URL = 'https://biblioteca-pessoal-pd1.vercel.app/';
 
 const Register = () => {
   const [formData, setFormData] = useState({
