@@ -30,7 +30,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.get(`${URL}/api/auth/login`, formData);
+      const response = await axios.post(`${URL}/api/auth/login`, formData);
       
       if (response.data.token && response.data.user) {
         login(response.data.user, response.data.token);
