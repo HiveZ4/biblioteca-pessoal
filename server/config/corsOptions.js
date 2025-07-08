@@ -7,6 +7,8 @@ const allowedOrigins = [
   "https://vercel.com/hivez4s-projects/biblioteca-pessoal/EQuqyhzG2garUY2k4HNZCrBvqT8r",
   "https://biblioteca-pessoal-eta.vercel.app/login",
   "https://biblioteca-pessoal-eta.vercel.app/register",
+  "https://biblioteca-pessoal-pd1.vercel.app//api/auth/login",
+  "https://biblioteca-pessoal-pd1.vercel.app//api/auth/register",
 ];
 
 const corsOptions = {
