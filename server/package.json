@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "A book management system",
+  "description": "sistema de gerenciamento de livros ",
   "main": "index.js",
   "scripts": {
     "start": "node index",
     "dev": "nodemon index"
   },
-  "author": "",
+  "author": "Vicenzo Goulart",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^6.11.1",
