@@ -6,7 +6,7 @@ const corsOptions = {
   credential: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
-const corsconfig = corsconfig
+let corsconfig = corsconfig
 const PORT = process.env.PORT || 8082;
 
 // Inicializar Prisma
@@ -27,7 +27,7 @@ testConnection();
 
 //Cross Origin Resource Sharing
 app.use(cors(corsOptions));
-const corsconfig = require('./config/corsOptions'); // Caminho relativo ao arquivo
+corsconfig = require('./config/corsOptions'); // Caminho relativo ao arquivo
 
 //built-in middleware to handle url encoded data
 //data which user enters in a form
