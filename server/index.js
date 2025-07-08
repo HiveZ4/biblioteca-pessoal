@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const corsOptions = require('./config/corsOptions');
+const corsOptions = {
+  origin:"*",
+  credential: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
 const PORT = process.env.PORT || 8082;
 
 // Inicializar Prisma
@@ -21,7 +25,8 @@ const testConnection = async () => {
 testConnection();
 
 //Cross Origin Resource Sharing
-app.use(cors()); 
+app.use(cors(corsOptions));
+app.options("", cors(corsconfig))
 
 //built-in middleware to handle url encoded data
 //data which user enters in a form
