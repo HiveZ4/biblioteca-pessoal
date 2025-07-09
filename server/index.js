@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const corsOptions = {
-  origin:["https://biblioteca.pessoal.pdt.vercel.app",
-    "https://biblioteca.pessoal.eta.vercel.app"],
-  credential: true,
+  origin:["https://biblioteca.pessoal.eta.vercel.app", "https://vercel.com/hivez4s-projects/biblioteca-pessoal-front/FSdFwdSYkstAC85WN5wRWDv9vWtQ"],
+  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 };
