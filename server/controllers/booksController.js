@@ -1,5 +1,9 @@
 const { PrismaClient } = require('../generated/prisma');
 
+const cors = require("cors")
+
+app.use(cors({origin: 'https://biblioteca-pessoal-eta.vercel.app' }));
+
 const prisma = new PrismaClient();
 
 const booksController = {
