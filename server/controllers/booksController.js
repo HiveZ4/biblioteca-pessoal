@@ -24,8 +24,16 @@ getAllBooks: async (req, res) => {
 
   // GET /api/books/editBook/:id - Obter um livro específico do usuário logado
 getBook: async (req, res) => {
-  try {
-    const bookId = parseInt(req.params.id);
+    try {
+      const userId = req.user.id;
+      const bookId = parseInt(req.params.id);
+
+      const book = await prisma.book.findFirst({
+        where: { 
+          id: bookId,
+          user_id: userId 
+        }
+      });
 
     const book = await prisma.book.findFirst({
       where: { id: bookId }
