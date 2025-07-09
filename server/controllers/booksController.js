@@ -6,16 +6,20 @@ const booksController = {
   
   // GET /api/books - Obter todos os livros do usuário logado
 getAllBooks: async (req, res) => {
-  try {
-    const books = await prisma.book.findMany({
-    where: { userId: req.userId },
-  orderBy: { id: 'asc' }
-});
-    res.json(books);
-  } catch (error) {
-    console.error("Erro ao buscar livros:", error);
-    res.status(500).json({ message: "Erro interno do servidor" });
-  }
+    try {
+      const userId = req.user.id;
+      
+      const books = await prisma.book.findMany({
+        where: { user_id: userId },
+        orderBy: { id: 'asc' }
+      });
+      
+      res.json(books);
+    } catch (error) {
+      console.error("Erro ao buscar livros:", error);
+      res.status(500).json({ message: "Erro interno do servidor" });
+    }
+  },
 },
 
   // GET /api/books/editBook/:id - Obter um livro específico do usuário logado
