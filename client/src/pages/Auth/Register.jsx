@@ -47,8 +47,8 @@ const Register = () => {
       const { confirmPassword, ...dataToSend } = formData;
       const response = await axios.post(`${URL}/api/auth/register`, dataToSend);
       
-      if (response.data.token && response.data.user) {
-        login(response.data.user, response.data.token);
+      if (response.data.user) {
+        login(response.data.user);
         navigate('/books');
       }
     } catch (error) {
