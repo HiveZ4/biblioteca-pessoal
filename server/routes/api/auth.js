@@ -2,6 +2,24 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../../controllers/authController');
 const { authenticateToken } = require('../../middleware/auth');
+const cors = require('cors');
+
+const authCorsOptions = {
+  origin: [
+    'http://localhost:3000', // Desenvolvimento
+    'https://biblioteca.pessoal.pdt.vercel.app', // Seu frontend
+    'https://biblioteca.pessoal.eta.vercel.app' // Alternativo
+  ],
+  credentials: true,
+  methods: ['POST', 'GET', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+// Aplica CORS especificamente nas rotas de auth
+router.use(cors(authCorsOptions));
+
+// OPTIONS handler para preflight
+router.options('*', cors(authCorsOptions));
 
 // POST /api/auth/register - Registrar novo usuário
 router.post('/register', authController.register);
