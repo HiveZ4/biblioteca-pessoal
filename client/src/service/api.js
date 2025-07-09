@@ -16,7 +16,7 @@ const getAuthHeaders = () => {
 // Interceptor para adicionar token automaticamente
 axios.interceptors.request.use(
   (config) => {
-    const token = getAuthToken();aa
+    const token = getAuthToken();
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
