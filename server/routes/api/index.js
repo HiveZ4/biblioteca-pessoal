@@ -1,8 +1,7 @@
 import express from 'express';
 import serverless from 'serverless-http';
 import cors from 'cors';
-
-import authController from '../../controllers/authController';
+import * as authController from '../../controllers/authController.js';
 import { authenticateToken } from '../../middleware/auth.js';
 
 const app = express();
