@@ -1,9 +1,7 @@
 const bcrypt = require('bcryptjs');
 const { PrismaClient } = require('../generated/prisma');
 const { generateToken } = require('../middleware/auth');
-const cors = require("cors")
 
-app.use(cors({origin: 'https://biblioteca-pessoal-eta.vercel.app' }));
 
 const prisma = new PrismaClient();
 
