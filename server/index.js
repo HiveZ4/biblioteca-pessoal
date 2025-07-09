@@ -2,6 +2,9 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8082;
+const cors = require("cors")
+
+app.use(cors({origin: 'https://biblioteca-pessoal-eta.vercel.app' }));
 
 // Inicializar Prisma
 const { PrismaClient } = require("./generated/prisma");

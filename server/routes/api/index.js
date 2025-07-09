@@ -3,6 +3,7 @@ import serverless from 'serverless-http';
 import cors from 'cors';
 import * as authController from '../../controllers/authController.js';
 import { authenticateToken } from '../../middleware/auth.js';
+const cors = require("cors");
 
 const app = express();
 
@@ -20,6 +21,8 @@ const authCorsOptions = {
   methods: ['POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
+
+app.use(cors({origin: 'https://biblioteca-pessoal-eta.vercel.app' }));
 
 app.use(cors(authCorsOptions));
 
