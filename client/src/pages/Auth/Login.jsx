@@ -43,8 +43,8 @@ const Login = () => {
         }
       });
       
-      if (response.data.user) {
-        login(response.data.user);
+      if (response.data.token && response.data.user) {
+        login(response.data.user, response.data.token);
         navigate('/books');
       }
     } catch (error) {
