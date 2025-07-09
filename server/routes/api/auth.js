@@ -7,8 +7,8 @@ const cors = require('cors');
 const authCorsOptions = {
   origin: [
     'http://localhost:3000', // Desenvolvimento // Seu frontend
+    'https://biblioteca-pessoal-pd1.vercel.app/',
     'https://biblioteca-pessoal-eta.vercel.app/',
-    'https://biblioteca-pessoal-front-git-main-hivez4s-projects.vercel.app/',
   ],
   credentials: true,
   methods: ['POST', 'GET', 'OPTIONS'],
