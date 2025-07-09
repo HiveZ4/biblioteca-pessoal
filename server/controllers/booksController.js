@@ -8,8 +8,9 @@ const booksController = {
 getAllBooks: async (req, res) => {
   try {
     const books = await prisma.book.findMany({
-      orderBy: { id: 'asc' }
-    });
+  where: { userId: req.userId },
+  orderBy: { id: 'asc' }
+});
     res.json(books);
   } catch (error) {
     console.error("Erro ao buscar livros:", error);
