@@ -71,7 +71,7 @@ createNewBook: async (req, res) => {
         author,
         no_of_pages,
         published_at: published_at.toISOString(),
-        // ⚠️ Não define `user_id`!
+        user_id: req.userId
       }
     });
 
