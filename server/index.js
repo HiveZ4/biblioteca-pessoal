@@ -37,7 +37,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Rotas
-const authRoutes = require('./routes/api/auth');
+app.use('/api/auth', require('./routes/api/auth'));
 const booksRoutes = require('./routes/api/books');
 
 app.use('/api/auth', authRoutes);

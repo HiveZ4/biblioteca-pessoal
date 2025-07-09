@@ -4,6 +4,8 @@ const authController = require('../../controllers/authController');
 const { authenticateToken } = require('../../middleware/auth');
 const cors = require('cors');
 
+export default async function handler(req, res) {
+
 const authCorsOptions = {
   origin: [
     'http://localhost:3000', // Desenvolvimento // Seu frontend
@@ -37,3 +39,4 @@ router.post('/logout', authenticateToken, authController.logout);
 
 module.exports = router;
 
+}
