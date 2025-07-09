@@ -11,7 +11,7 @@ const authCorsOptions = {
     'https://biblioteca-pessoal-eta.vercel.app/',
   ],
   credentials: true,
-  methods: ['POST', 'GET', 'OPTIONS'],
+  methods: ['POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 

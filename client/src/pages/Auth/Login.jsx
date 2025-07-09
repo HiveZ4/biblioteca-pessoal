@@ -4,7 +4,14 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import './auth.css';
 
-const URL = 'https://biblioteca-pessoal-pd1.vercel.app';
+// Configuração do Axios para todas as requisições
+const api = axios.create({
+  baseURL: 'https://biblioteca-pessoal-pd1.vercel.app',
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +37,11 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(`${URL}/api/auth/login`, formData);
+      const response = await api.post('/api/auth/login', formData, {
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
       
       if (response.data.token && response.data.user) {
         login(response.data.user, response.data.token);
@@ -40,7 +51,7 @@ const Login = () => {
       console.error('Erro no login:', error);
       setError(
         error.response?.data?.message || 
-        'Erro ao fazer login. Tente novamente.'
+        'Erro ao fazer login. Verifique suas credenciais e tente novamente.'
       );
     } finally {
       setLoading(false);
@@ -81,6 +92,7 @@ const Login = () => {
               onChange={handleChange}
               required
               placeholder="Digite sua senha"
+              minLength="6"
             />
           </div>
 
@@ -98,6 +110,9 @@ const Login = () => {
             Não tem uma conta? 
             <Link to="/register" className="auth-link"> Cadastre-se</Link>
           </p>
+          <p>
+            <Link to="/forgot-password" className="auth-link">Esqueceu sua senha?</Link>
+          </p>
         </div>
       </div>
     </div>
@@ -105,4 +120,3 @@ const Login = () => {
 };
 
 export default Login;
-
