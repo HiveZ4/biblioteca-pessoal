@@ -2,7 +2,6 @@ import express from 'express';
 import serverless from 'serverless-http';
 import cors from 'cors';
 import * as authController from '../../controllers/authController.js';
-import { authenticateToken } from '../../middleware/auth.js';
 const cors = require("cors");
 
 const app = express();
@@ -34,8 +33,8 @@ const router = express.Router();
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);
-router.get('/me', authenticateToken, authController.getProfile);
-router.post('/logout', authenticateToken, authController.logout);
+router.get('/me', authController.getProfile);
+router.post('/logout', authController.logout);
 
 app.use('/api/auth', router);
 
