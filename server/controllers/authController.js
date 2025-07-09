@@ -63,8 +63,6 @@ const authController = {
         }
       });
 
-      // Gerar token JWT
-      const token = generateToken(newUser);
 
       // Remover senha da resposta
       const { password: _, ...userWithoutPassword } = newUser;
@@ -113,8 +111,6 @@ const authController = {
         });
       }
 
-      // Gerar token JWT
-      const token = generateToken(user);
 
       // Remover senha da resposta
       const { password: _, ...userWithoutPassword } = user;

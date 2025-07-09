@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const booksController = require('../../controllers/booksController');
-const { authenticateToken } = require('../../middleware/auth');
-
-// Todas as rotas de livros agora requerem autenticação
-router.use(authenticateToken);
 
 // GET /api/books - Obter todos os livros do usuário logado
 router.get('/', booksController.getAllBooks);
