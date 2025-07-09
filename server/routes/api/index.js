@@ -9,6 +9,12 @@ const app = express();
 // Middlewares padrão
 app.use(express.json());
 
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 // Configuração CORS
 const authCorsOptions = {
   origin: [
