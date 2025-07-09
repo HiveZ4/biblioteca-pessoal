@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../../controllers/authController');
-const { authenticateToken } = require('../../middleware/auth');
 
 // POST /api/auth/register - Registrar novo usuário
 router.post('/register', authController.register);
@@ -10,10 +9,10 @@ router.post('/register', authController.register);
 router.post('/login', authController.login);
 
 // GET /api/auth/me - Obter perfil do usuário logado (rota protegida)
-router.get('/me', authenticateToken, authController.getProfile);
+router.get('/me', authController.getProfile);
 
 // POST /api/auth/logout - Logout do usuário (rota protegida)
-router.post('/logout', authenticateToken, authController.logout);
+router.post('/logout',  authController.logout);
 
 module.exports = router;
 
