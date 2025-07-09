@@ -138,7 +138,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\vicen\\Desktop\\pd1\\projeto_livros\\server\\generated\\prisma",
+      "value": "/home/ubuntu/biblioteca-pessoal/server/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -147,17 +147,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\vicen\\Desktop\\pd1\\projeto_livros\\server\\prisma\\schema.prisma",
+    "sourceFilePath": "/home/ubuntu/biblioteca-pessoal/server/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.11.1",
