@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const booksController = require('../../controllers/booksController');
 const { authenticateToken } = require('../../middleware/auth');
-const cors = require("cors")
-
-app.use(cors({origin: 'https://biblioteca-pessoal-eta.vercel.app' }));
 
 // Todas as rotas de livros agora requerem autenticação
 router.use(authenticateToken);
